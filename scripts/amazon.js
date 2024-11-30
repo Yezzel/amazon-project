@@ -74,8 +74,6 @@ products.forEach((product) => {
 document.querySelector('.js-products-grid')
 .innerHTML = putProductHtml;
 
-
-
 document.querySelectorAll('.add-cart').forEach((button) => {
   button.addEventListener('click', () => {
 
@@ -83,8 +81,8 @@ document.querySelectorAll('.add-cart').forEach((button) => {
 
    addToCart(productId);
    calculateCartQuantity();
-  })
-    })
+  });
+    });
   
   
   
