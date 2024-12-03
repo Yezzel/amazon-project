@@ -11,15 +11,15 @@ export function renderOrderSummary () {
   let totalCartSumHTML= '';
 
 
-  cart.forEach((item) => {
+  cart.forEach((cartItem) => {
     
-  const productId = item.productId
+  const productId = cartItem.productId
 
   const matchingProduct = getProduct(productId);
 
  
 
-  const deliveryOptionId = item.deliveryOptionId;
+  const deliveryOptionId = cartItem.deliveryOptionId;
 
   const deliveryOption = getDeliveryOption(deliveryOptionId);
 
@@ -54,7 +54,7 @@ export function renderOrderSummary () {
                   </div>
                   <div class="product-quantity">
                     <span>
-                      Quantity: <span class="quantity-label">${item.quantity}</span>
+                      Quantity: <span class="quantity-label">${cartItem.quantity}</span>
                     </span>
                     <span class="update-quantity-link link-primary js-link-update"
                     data-product-id = "${matchingProduct.id}">
@@ -72,7 +72,7 @@ export function renderOrderSummary () {
                     Choose a delivery option:
                   </div>
                   
-                  ${deliveryOptionsHTML(matchingProduct, item)}
+                  ${deliveryOptionsHTML(matchingProduct, cartItem)}
                   
                 </div>
               </div>
@@ -82,7 +82,7 @@ export function renderOrderSummary () {
             `
   });
 
-  function deliveryOptionsHTML (matchingProduct, item ) {
+  function deliveryOptionsHTML (matchingProduct, cartItem ) {
 
     let html = '';
 
@@ -93,7 +93,7 @@ export function renderOrderSummary () {
       const priceDeliveryOption = deliveryOption.priceCents === 0 
       ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)}-`;
 
-      const isChecked = deliveryOption.id === item.deliveryOptionId;
+      const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
 
 
 
