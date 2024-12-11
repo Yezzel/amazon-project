@@ -46,3 +46,4 @@ describe('test suite: Add to cart', () => {
     expect(cart[0].quantity).toEqual(1)
   })
 })
+

@@ -140,11 +140,7 @@ export function renderOrderSummary () {
       container.remove();
 
       renderPaymentSummary();
-
     });
-
-    
-    
 
   });
   document.querySelectorAll('.js-delivery-option').forEach((element) => {
