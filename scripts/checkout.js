@@ -6,6 +6,7 @@ import { loadProducts, loadProductsfetch } from "../data/products.js";
 import { loadCart } from "../data/cart.js";
 
 
+
 Promise.all([
   new Promise((resolve) => {
      loadProducts(() => {
@@ -23,6 +24,7 @@ Promise.all([
   console.log(values)
   renderOrderSummary();
   renderPaymentSummary();
+  orderSummary();
 })
   
   
